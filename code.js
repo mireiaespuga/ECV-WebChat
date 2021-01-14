@@ -25,11 +25,6 @@ var now = new Date();
 var msToMidnight = midnight - now;
 
 midnightTask();
-var b = document.querySelector("#send_button");
-b.addEventListener("click", sendMessage);
-
-var c = document.querySelector("#conver");
-c.addEventListener("click", loadMessages);
 
 var conversations = []
 
@@ -44,6 +39,14 @@ for (let index = 0; index < 5; index++) {
 }
 
 showConversations();
+
+
+var b = document.querySelector("#send_button");
+b.addEventListener("click", sendMessage);
+
+var c = document.querySelector("#conver");
+c.addEventListener("click", loadMessages);
+
 
 setTimeout(
     midnightTask,
