@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Mireia's Chat</title>
+        <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    </head>
+    <body>
+      <div class="wrapper">
+        <div id="conv-section" class="container" >
+          <div class="contact-header" id="contact-header">
+            <div class="avatar"></div>
+            <div class="contact-info">
+              <h1 class="user-name">Mireia Espuga</h1>
+            </div>
+          </div>
+          <div id="conversations" class="conv-list"> </div>
+        </div>
+        <div id="chat-section" class="container">
+          <div class="contact-header" id="contact-header">
+            <div class="avatar">
+              <img src="avatar.png" alt="Default avatar" >
+            </div>
+            <div class="contact-info">
+              <h1 class="user-name">My friend</h1>
+            </div>
+          </div>
+          <div id="chat" class="chat">
+            
+          </div>
+          <div class="input-text">
+            <input type="text"/>
+            
+            <button id="send_button">
+              <i class="material-icons" style="font-size:1.5rem">send</i>
+            </button>
+          </div>
+            
+        </div>
+      </div>
+      <script type="text/javascript" src="code.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </body>
+</html>
+
+<!-- <div
+*ngIf="selectedCaseMessages"
+fxFlex
+fxLayout="column"
+class="messages-container"
+#messagesList
+[scrollTop]="disableScrollDown ? msgScroll : messagesList.scrollHeight"
+>
+<div *ngIf="loadingMessages" fxFlexAlign="center" @loadMsgs>
+  <mat-spinner [diameter]="32" [strokeWidth]="3.2"></mat-spinner>
+</div>
+<div
+  *ngIf="showGetMoreMessages && !loadingMessages"
+  fxFlexAlign="center"
+  (click)="loadOlderMessages()"
+>
+  <button mat-raised-button>Get older messages</button>
+</div>
+
+<ng-container
+  *ngFor="
+    let message of selectedCaseMessages;
+    let i = index;
+    trackBy: trackByMessage
+  "
+>
+  <mat-toolbar
+    *ngIf="
+      getDate(selectedCaseMessages[i - 1]) !==
+      getDate(selectedCaseMessages[i])
+    "
+    >{{ getDate(selectedCaseMessages[i]) }}
+  </mat-toolbar>
+  <app-case-box-message
+    [message]="message"
+    [chat]="selectedCase?.chat"
+  ></app-case-box-message>
+</ng-container>
+<div #endOfMessagesList></div>
+
+<div fxFlex="none" fxFlexAlign="center" class="assign">
+  <button
+    mat-button
+    *ngIf="selectedCase?.is_waiting && parent == 'inbox'"
+    (click)="assignMe()"
+  >
+    Assign to me
+  </button>
+</div>
+</div> -->
