@@ -8,30 +8,56 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     </head>
     <body>
-      <div class="wrapper">
+      <div id="init" class="init-container fully-centered">
+        <div class="container user-form">
+          <div class="fully-centered">
+            <img class="logo" src="Assets/logo.png" alt="Logo" >
+          </div>
+          <div class="form">
+            <div style="display: flex;">
+              <label class="form-label" for="username">Username:</label>
+              <div class="feedback" id="username-feedback"></div>
+            </div>
+            <input class="form-input" type="text" id="username" name="username" required>
+
+            <div style="display: flex;">
+              <label class="form-label" for="room">Room name:</label>
+              <div class="feedback" id="room-feedback"></div>
+            </div>
+            <input class="form-input" type="text" id="room" name="room" required><br><br>
+            <div>
+              <button id="submit_button" type="submit">Enter</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div id="webchat" class="webchat-container">
         <div id="conv-section" class="container" >
           <div class="contact-header" id="contact-header">
-            <div class="avatar"></div>
+            <div class="avatar">
+              <img id="my-avatar" alt="avatar">
+            </div>
             <div class="contact-info">
-              <h1 class="user-name">Mireia Espuga</h1>
+              <h1 id="my-username" class="user-name"></h1>
             </div>
           </div>
           <div id="conversations" class="conv-list"> </div>
         </div>
         <div id="chat-section" class="container">
           <div class="contact-header" id="contact-header">
-            <div class="avatar">
-              <img src="avatar.png" alt="Default avatar" >
+            <div id="group-pic" class="avatar">
             </div>
             <div class="contact-info">
-              <h1 class="user-name">My friend</h1>
+              <!-- <h1 class="user-name">My friend</h1> -->
+              <h1 id="group-name" class="user-name"></h1>
             </div>
           </div>
           <div id="chat" class="chat">
             
           </div>
           <div class="input-text">
-            <input type="text"/>
+            <input id="type-section" class="type-section" type="text"/>
             
             <button id="send_button">
               <i class="material-icons" style="font-size:1.5rem">send</i>
@@ -40,58 +66,38 @@
             
         </div>
       </div>
-      <script type="text/javascript" src="code.js"></script>
+      <div id="avatars" class="init-container fully-centered">
+        <div style="width: 500px;" class="container user-form">
+          <div class="form">
+            <div class="four-grid" id="display-avatars">
+              <div class="avatar grid" id="box-1">
+                <img id="pic1" class="grid">
+              </div>
+              <div class="avatar grid" id="box-2">
+                <img id="pic2" class="grid">
+              </div>
+              <div class="avatar grid" id="box-3">
+                <img id="pic3" class="grid">
+              </div>
+              <div class="avatar grid" id="box-4">
+                <img id="pic4" class="grid">
+              </div>
+            </div>
+            <div>
+              <button id="avatar_button" type="submit">Save</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <script src="sillyclient.js"></script>
+      <script src="utils.js"></script>
+      <script src="user.js"></script>
+      <script src="chat.js"></script>
+      <script src="room.js"></script>
+      <script src="message.js"></script>
+      <script src="code.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </body>
 </html>
 
-<!-- <div
-*ngIf="selectedCaseMessages"
-fxFlex
-fxLayout="column"
-class="messages-container"
-#messagesList
-[scrollTop]="disableScrollDown ? msgScroll : messagesList.scrollHeight"
->
-<div *ngIf="loadingMessages" fxFlexAlign="center" @loadMsgs>
-  <mat-spinner [diameter]="32" [strokeWidth]="3.2"></mat-spinner>
-</div>
-<div
-  *ngIf="showGetMoreMessages && !loadingMessages"
-  fxFlexAlign="center"
-  (click)="loadOlderMessages()"
->
-  <button mat-raised-button>Get older messages</button>
-</div>
-
-<ng-container
-  *ngFor="
-    let message of selectedCaseMessages;
-    let i = index;
-    trackBy: trackByMessage
-  "
->
-  <mat-toolbar
-    *ngIf="
-      getDate(selectedCaseMessages[i - 1]) !==
-      getDate(selectedCaseMessages[i])
-    "
-    >{{ getDate(selectedCaseMessages[i]) }}
-  </mat-toolbar>
-  <app-case-box-message
-    [message]="message"
-    [chat]="selectedCase?.chat"
-  ></app-case-box-message>
-</ng-container>
-<div #endOfMessagesList></div>
-
-<div fxFlex="none" fxFlexAlign="center" class="assign">
-  <button
-    mat-button
-    *ngIf="selectedCase?.is_waiting && parent == 'inbox'"
-    (click)="assignMe()"
-  >
-    Assign to me
-  </button>
-</div>
-</div> -->
