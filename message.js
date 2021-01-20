@@ -23,7 +23,9 @@ function sendMessage(room, type, userId){
 
     switch (type) {
         case types.USER:
-            var msg = new Message(getUsername(room, server.user_id), 'this is my username', types.USER);
+
+            var username = getUsername(room, server.user_id);
+            var msg = new Message(username, findUser(username).pic, types.USER);
             server.sendMessage(JSON.stringify(msg));
             break;
 

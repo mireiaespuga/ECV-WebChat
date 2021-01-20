@@ -13,7 +13,7 @@ server.on_message = function(user_id, data){
 
     switch (message.type) {
         case types.USER:
-            var newUser = new User(message.userName, user_id);
+            var newUser = new User(message.userName, user_id, message.text);
             addUserToRoom(room, newUser);
             break;
         

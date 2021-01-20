@@ -70,4 +70,5 @@ function changeAvatar() {
 function setMyAvatar() {
     var myAvatar = document.querySelector("#my-avatar");
     myAvatar.src = myself.pic;
+    sendMessage(room, types.USER);
 }

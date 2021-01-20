@@ -22,13 +22,24 @@ function canAddUser(room, username){
     }
 }
 
+function findUser(username) {
+    return room.users.find(u => u.userName.toLowerCase() == username.toLowerCase())
+}
+
 function isUserInRoom(room, username) {
-    return !room.users.find(u => u.userName.toLowerCase() == username.toLowerCase()) ? false : true
+    return !findUser(username) ? false : true
 }
 
 function addUserToRoom(room, user) {
     if(!isUserInRoom(room, user.userName)){
         room.users.push(user);
+    }else{
+        var existingUser = findUser(user.userName);
+        if(existingUser.pic != user.pic){ //there has been a change in avatar
+            var objIndex = room.users.findIndex((obj => obj.id == user.id));
+            room.users[objIndex].pic = user.pic;
+        }
+        
     }
 }
 
